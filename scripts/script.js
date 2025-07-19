@@ -1,26 +1,9 @@
+// script.js
 const user = JSON.parse(localStorage.getItem('user'));
-const path = window.location.pathname;
-const fileName = path.substring(path.lastIndexOf('/') + 1);
 
-if (fileName === 'index.html' && !user) {
+if (!user) {
     window.location.href = 'form.html';
-}
-
-if (fileName === 'form.html') {
-    const form = document.getElementById('user-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const userData = {
-            name: document.getElementById('name').value,
-            ipte: document.getElementById('ipte').value,
-            district: document.getElementById('district').value
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-        window.location.href = 'index.html';
-    });
-}
-
-if (fileName === 'index.html' && user) {
+} else {
     document.getElementById('user-info').innerHTML = `
         Welcome, ${user.name} (IPTE ${user.ipte}, ${user.district})
     `;
