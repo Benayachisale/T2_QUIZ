@@ -65,6 +65,19 @@
             </form>
         </main>
     </div>
-    <script src="scripts/script.js"></script>
+    <script>
+// form.js
+const form = document.getElementById('user-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userData = {
+        name: document.getElementById('name').value,
+        ipte: document.getElementById('ipte').value,
+        district: document.getElementById('district').value
+    };
+    localStorage.setItem('user', JSON.stringify(userData));
+    window.location.href = 'index.html';
+});
+</script>
 </body>
 </html>
