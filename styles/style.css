@@ -13,12 +13,14 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items:center;
+align-content:center;
+justify-items:center;
     padding: 20px;
 }
 
 .container {
-    max-width: 960px;
+    width:90vw;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
