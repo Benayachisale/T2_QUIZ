@@ -1,5 +1,4 @@
- document.addEventListener('DOMContentLoaded', () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem('user'));
     
     if (window.location.pathname.includes('index.html') && !user) {
         window.location.href = 'form.html';
@@ -76,4 +75,3 @@
 
         loadQuestion();
     }
-});
